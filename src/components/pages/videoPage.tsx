@@ -3,7 +3,7 @@ import React from "react";
 import { SideBar } from "..";
 import { useState } from "react";
 
-import { ICategoria, IVideos } from "../../types";
+import { ICategoria, IVideos } from "../types";
 import { useMediaQuery, Accordion, AccordionButton, AccordionItem, AccordionPanel, AspectRatio, Box, Flex, Heading, Text } from "@chakra-ui/react";
 
 export default function TutorialVideo() {

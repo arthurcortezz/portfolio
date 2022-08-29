@@ -1,7 +1,7 @@
 import router from "next/router";
 import { Flex, Stack, Text, Box, Link, Container } from "@chakra-ui/react";
 
-export default function FooterPreview() {
+export default function FooterPage() {
   const pushToHistory = (str: string) => {
     router.push(str);
   };

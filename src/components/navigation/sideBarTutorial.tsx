@@ -1,5 +1,5 @@
 import { Flex, FlexProps } from "@chakra-ui/react";
-import { IVideos } from "../../types";
+import { IVideos } from "../types";
 
 interface Props extends FlexProps {
   doc: IVideos;
