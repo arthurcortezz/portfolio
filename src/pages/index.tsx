@@ -1,4 +1,3 @@
-import { Button, Text, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { Login } from "../components";
 import Manager from "./manager";
