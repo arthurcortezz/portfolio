@@ -8,7 +8,6 @@ interface Props {
 export default function Menu({ setLogin, value }: Props) {
   return (
     <>
-      <Container />
       <Flex w={"100%"}>
         <Flex w="50%" justifyContent={"center"}>
           <Text textAlign={"center"} fontWeight={600}>

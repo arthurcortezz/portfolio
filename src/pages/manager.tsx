@@ -1,14 +1,19 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { Button } from "../components";
+import { Button, Container } from "../components";
+import { ILinkProps } from "../components/types";
 
 interface Props {
   setLogin: Function;
 }
 export default function Manager({ setLogin }: Props) {
-  return (
-    <Flex w={"100%"}>
-      <Text fontWeight={600}> Hello World !</Text>
-      <Button name={"login"} onClick={() => setLogin("login")} />
-    </Flex>
-  );
+  let LinkItems: Array<ILinkProps> = [
+    {
+      id: "home",
+      name: "Home",
+      render: <></>,
+      active: true,
+      mode: "link",
+    },
+  ];
+  return <Container linkItems={LinkItems} />;
 }

@@ -1,7 +1,10 @@
-import { Flex, Image, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, Image, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { ILinkProps } from "../../types";
 
-interface Props {}
-export default function Menu({}: Props) {
+interface Props {
+  linkItems: ILinkProps[];
+}
+export default function Menu({ linkItems, ...rest }: Props) {
   const [isLargerThan] = useMediaQuery("(min-width: 960px)");
   return (
     <>
@@ -49,17 +52,25 @@ export default function Menu({}: Props) {
           </Flex>
         </Flex>
       </Flex>
-      <Flex direction={"column"} bg={"#202020"} w={"15%"} h={"100vh"}>
-        <Link href="/">
-          <Text>Home</Text>
-        </Link>
-        <Link href="/">
-          <Text>Administrator</Text>
-        </Link>
-        <Link href="/">
-          <Text>Login / Register</Text>
-        </Link>
-      </Flex>
+      <Box
+        transition="0.5s ease"
+        bg={"#202020"}
+        borderRight="1px"
+        borderRightColor={"gray.200"}
+        w={{ base: "full", md: 60 }}
+        pos="fixed"
+        h="full"
+        overflowX={"hidden"}
+        overflowY={"auto"}
+        {...rest}>
+        {linkItems.map((item: ILinkProps, index) => {
+          return (
+            <Box key={index} as={"button"} w="100%" _hover={{ bg: "black" }}>
+              <Text color={"white"}>{item.name}</Text>
+            </Box>
+          );
+        })}
+      </Box>
     </>
   );
 }
