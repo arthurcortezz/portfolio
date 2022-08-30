@@ -1,4 +1,4 @@
-import { Button, Flex, Spinner, Text, useBoolean } from "@chakra-ui/react";
+import { Flex, Spinner, useBoolean } from "@chakra-ui/react";
 import { ILinkProps } from "../../types";
 import { Menu } from "../..";
 import { useState } from "react";
