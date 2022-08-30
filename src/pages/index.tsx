@@ -9,7 +9,7 @@ export default function Home() {
     //   return <Login setLogin={setLogin} value={value} />;
     // }
     if (login === "auth") {
-      return <Manager setLogin={setLogin} />;
+      return <Manager />;
     }
   };
   return showLogin(login);
