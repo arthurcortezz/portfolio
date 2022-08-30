@@ -1,11 +1,8 @@
-import router from "next/router";
-import { Flex, Spinner, Text, useBoolean } from "@chakra-ui/react";
-import { Button, Container } from "../components";
+import { Container } from "../components";
 import { ILinkProps } from "../components/types";
 
 interface Props {}
 export default function Manager({}: Props) {
-  const [loader, setLoader] = useBoolean(false);
   let LinkItems: Array<ILinkProps> = [
     {
       id: "home",

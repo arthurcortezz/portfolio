@@ -5,8 +5,9 @@ import { ILinkProps } from "../../types";
 interface Props {
   linkItems: ILinkProps[];
   children: ReactNode;
+  onClickMenu?: (link: ILinkProps) => void;
 }
-export default function Menu({ linkItems, children, ...rest }: Props) {
+export default function Menu({ onClickMenu, linkItems, children, ...rest }: Props) {
   const [isLargerThan] = useMediaQuery("(min-width: 960px)");
   return (
     <>
@@ -69,7 +70,7 @@ export default function Menu({ linkItems, children, ...rest }: Props) {
             {...rest}>
             {linkItems.map((item: ILinkProps, index) => {
               return (
-                <Box key={index} as={"button"} w="100%" _hover={{ bg: "black" }}>
+                <Box key={index} as={"button"} onClick={() => onClickMenu && onClickMenu(item)} w="100%" _hover={{ bg: "black" }}>
                   <Text color={"white"}>{item.name}</Text>
                 </Box>
               );
