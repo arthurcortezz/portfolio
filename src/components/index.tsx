@@ -5,6 +5,7 @@ export { default as VideoPage } from "./pages/videoPage";
 export { default as FooterPage } from "./footer/footerPage";
 
 export { default as Login } from "./modules/authentication/login";
+export { default as Menu } from "./modules/pagination/menu";
 export { default as Container } from "./modules/pagination/pageContainer";
 
 export { default as Button } from "./button/simpleButton";
