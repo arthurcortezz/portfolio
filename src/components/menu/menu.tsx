@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link, Text, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { ILinkProps } from "../types";
 import { TopMenu, SideMenu } from "../";

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Login } from "../components";
 import Manager from "./manager";
 
 export default function Home() {
