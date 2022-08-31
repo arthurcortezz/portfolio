@@ -1,4 +1,4 @@
-import { Container } from "../components";
+import { CommentPage, Container, GitPage, HomePage, PersonalInfoPage, ProjectsPage, VideoPage } from "../components";
 import { ILinkProps } from "../components/types";
 
 interface Props {}
@@ -7,28 +7,44 @@ export default function Manager({}: Props) {
     {
       id: "home",
       name: "Home",
-      render: <></>,
+      render: <HomePage />,
       active: true,
       mode: "link",
     },
     {
       id: "git",
       name: "GitHub",
-      render: <></>,
+      render: <GitPage />,
       active: true,
       mode: "link",
     },
     {
+      id: "projects",
+      name: "Projects",
+      render: <ProjectsPage />,
+      active: true,
+      mode: "link",
+      subItems: [
+        {
+          id: "video_player",
+          name: "Video Player",
+          render: <VideoPage />,
+          active: true,
+          mode: "link",
+        },
+      ],
+    },
+    {
       id: "personal_info",
       name: "Personal Info",
-      render: <></>,
+      render: <PersonalInfoPage />,
       active: true,
       mode: "link",
     },
     {
       id: "leave_a_comment",
       name: "Leave a Comment",
-      render: <></>,
+      render: <CommentPage />,
       active: true,
       mode: "link",
     },

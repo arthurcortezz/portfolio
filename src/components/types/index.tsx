@@ -14,5 +14,5 @@ export interface ILinkProps {
   mode: "link" | "render";
   render?: JSX.Element;
   active: boolean;
-  // subItems?: ILinkProps[];
+  subItems?: ILinkProps[];
 }

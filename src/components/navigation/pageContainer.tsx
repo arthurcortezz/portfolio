@@ -1,6 +1,6 @@
 import { Flex, Spinner, useBoolean } from "@chakra-ui/react";
-import { ILinkProps } from "../../types";
-import { Menu } from "../..";
+import { ILinkProps } from "../types";
+import { Menu } from "..";
 import { useState } from "react";
 
 interface Props {
@@ -11,8 +11,7 @@ export default function Container({ linkItems }: Props) {
   const [loader, setLoader] = useBoolean(false);
   const [renderItem, setRenderItem] = useState<ILinkProps | undefined | null>(linkItems[0]);
   const render = (link: ILinkProps) => {
-    if (!link.active) return;
-    else {
+    if (link.active) {
       setRenderItem(null);
       setRenderItem(link);
       setLoader.on;
