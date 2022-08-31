@@ -27,8 +27,9 @@ export default function Container({ linkItems }: Props) {
       {loader ? (
         <Spinner color="black" label="loading" />
       ) : (
-        // <>{router.push(LinkItems.href)}</>
-        <Flex>{renderItem?.render}</Flex>
+        <Flex minH={"100vh"} bg={"#e6e6e6"} w={"70%"} direction={"column"}>
+          {renderItem?.render}
+        </Flex>
       )}
     </Menu>
   );

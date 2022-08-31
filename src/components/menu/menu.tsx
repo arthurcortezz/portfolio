@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { ILinkProps } from "../types";
-import { TopMenu, SideMenu } from "../";
+import { TopMenu, BottomMenu } from "../";
 
 interface Props {
   linkItems: ILinkProps[];
@@ -13,8 +13,8 @@ export default function MainMenu({ onClickMenu, value, linkItems, children }: Pr
   return (
     <Flex direction={"column"}>
       <TopMenu />
-      <SideMenu value={value} linkItems={linkItems} onClickMenu={onClickMenu} />
-      <Flex w={"100%"} direction={"column"}>
+      <BottomMenu value={value} linkItems={linkItems} onClickMenu={onClickMenu} />
+      <Flex direction={"column"} align={"center"} bg={"#202020"}>
         {children}
       </Flex>
     </Flex>

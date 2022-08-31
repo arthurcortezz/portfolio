@@ -1,4 +1,12 @@
-import { CommentPage, Container, GitPage, HomePage, PersonalInfoPage, ProjectsPage, VideoPage } from "../components";
+import {
+  CommentPage,
+  Container,
+  GitPage,
+  HomePage,
+  PersonalInfoPage,
+  ProjectsPage,
+  VideoPage,
+} from "../components";
 import { ILinkProps } from "../components/types";
 
 interface Props {}
@@ -35,8 +43,8 @@ export default function Manager({}: Props) {
       ],
     },
     {
-      id: "personal_info",
-      name: "Personal Info",
+      id: "about_me",
+      name: "About Me",
       render: <PersonalInfoPage />,
       active: true,
       mode: "link",

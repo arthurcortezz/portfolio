@@ -14,6 +14,8 @@ export { default as Container } from "./navigation/pageContainer";
 export { default as SimpleButton } from "./button/simpleButton";
 
 export { default as TopMenu } from "./menu/topMenu";
-export { default as SideMenu } from "./menu/bottomMenu";
+export { default as BottomMenu } from "./menu/bottomMenu";
 export { default as BottomMenuItem } from "./menu/bottomMenuItem";
 export { default as Menu } from "./menu/menu";
+
+export { default as SimpleText } from "./text/simpleText";

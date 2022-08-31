@@ -12,9 +12,8 @@ export default function BottomMenu({ onClickMenu, value, linkItems, ...rest }: P
     <Flex
       transition="0.5s ease"
       bg={"#202020"}
-      borderRight="1px"
-      borderRightColor={"gray.200"}
       w={"full"}
+      borderBottom={"1px solid gray"}
       overflowX={"hidden"}
       overflowY={"auto"}
       {...rest}>
