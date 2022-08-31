@@ -20,6 +20,7 @@ export default function Container({ linkItems }: Props) {
   return (
     <Menu
       linkItems={linkItems}
+      value={renderItem}
       onClickMenu={(link: ILinkProps) => {
         if (link && link.render) render(link);
       }}>

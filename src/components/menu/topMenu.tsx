@@ -3,17 +3,35 @@ import { Flex, Image, Link, Text, useMediaQuery } from "@chakra-ui/react";
 export default function TopMenu() {
   const [isLargerThan] = useMediaQuery("(min-width: 960px)");
   return (
-    <Flex pos="fixed" w={"100%"} borderBottom={"1px solid #393939"} bg={"#202020"} p={"0px 20px"} h={"51px"} justifyContent={"center"}>
+    <Flex
+      w={"100%"}
+      borderBottom={"1px solid #393939"}
+      bg={"#202020"}
+      p={"0px 20px"}
+      h={"51px"}
+      justifyContent={"center"}>
       <Flex justify={"center"} w="100%" maxWidth={"1200px"}>
         <Flex w="20%">
           {isLargerThan ? (
-            <Flex minWidth={"171px"} h={"100%"} border={"1px solid #393939"} borderTop={"none"} justify={"center"} align={"center"}>
-              <Link fontSize={"12px"} color={"white"}>
-                SIGN IN | JOIN
+            <Flex
+              minWidth={"171px"}
+              h={"100%"}
+              border={"1px solid #393939"}
+              borderTop={"none"}
+              justify={"center"}
+              align={"center"}>
+              <Link fontSize={"12px"} color={"white"} fontWeight="bold">
+                LEAVE A COMMENT HERE!
               </Link>
             </Flex>
           ) : (
-            <Flex w={"100%"} h={"100%"} border={"1px solid #393939"} borderTop={"none"} justify={"center"} align={"center"}>
+            <Flex
+              w={"100%"}
+              h={"100%"}
+              border={"1px solid #393939"}
+              borderTop={"none"}
+              justify={"center"}
+              align={"center"}>
               <Link href="/" justifyContent={"center"}>
                 <Image maxWidth={"35px"} alt="img" src="menu.png" />
               </Link>

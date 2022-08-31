@@ -9,12 +9,11 @@ export { default as ProjectsPage } from "./pages/projectsPage";
 
 export { default as FooterPage } from "./footer/footerPage";
 
-// export { default as Login } from "./modules/authentication/login";
-
 export { default as Container } from "./navigation/pageContainer";
 
 export { default as SimpleButton } from "./button/simpleButton";
 
 export { default as TopMenu } from "./menu/topMenu";
-export { default as SideMenu } from "./menu/sideMenu";
+export { default as SideMenu } from "./menu/bottomMenu";
+export { default as BottomMenuItem } from "./menu/bottomMenuItem";
 export { default as Menu } from "./menu/menu";
