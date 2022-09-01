@@ -7,8 +7,9 @@ export default function TopMenu() {
       w={"100%"}
       borderBottom={"1px solid #393939"}
       bg={"#202020"}
+      pos={"fixed"}
       p={"0px 20px"}
-      h={"51px"}
+      h={"50px"}
       justifyContent={"center"}>
       <Flex justify={"center"} w="100%" maxWidth={"1200px"}>
         <Flex w="20%">
@@ -20,7 +21,11 @@ export default function TopMenu() {
               borderTop={"none"}
               justify={"center"}
               align={"center"}>
-              <Link fontSize={"12px"} color={"white"} fontWeight="bold">
+              <Link
+                fontSize={"12px"}
+                color={"white"}
+                fontWeight="bold"
+                href="https://www.instagram.com/arthurcortez19/">
                 LEAVE A COMMENT HERE!
               </Link>
             </Flex>
@@ -32,7 +37,7 @@ export default function TopMenu() {
               borderTop={"none"}
               justify={"center"}
               align={"center"}>
-              <Link href="/" justifyContent={"center"}>
+              <Link href="https://www.instagram.com/arthurcortez19/" justifyContent={"center"}>
                 <Image maxWidth={"35px"} alt="img" src="menu.png" />
               </Link>
             </Flex>

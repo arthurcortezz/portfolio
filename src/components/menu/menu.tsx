@@ -14,7 +14,7 @@ export default function MainMenu({ onClickMenu, value, linkItems, children }: Pr
     <Flex direction={"column"}>
       <TopMenu />
       <BottomMenu value={value} linkItems={linkItems} onClickMenu={onClickMenu} />
-      <Flex direction={"column"} align={"center"} bg={"#202020"}>
+      <Flex mt={"90px"} direction={"column"} align={"center"} bg={"#202020"}>
         {children}
       </Flex>
     </Flex>

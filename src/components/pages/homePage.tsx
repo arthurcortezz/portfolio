@@ -12,7 +12,7 @@ export default function HomePage() {
         <SimpleText text={"JavaScript, "} />
         <SimpleText text={"TypeScript,"} />
         <SimpleText text={"HTML,"} />
-        <SimpleText text={"CSS,"} />
+        <SimpleText text={"CSS"} />
         <SimpleText text={"Data base: NoSQL MongoDB"} />
         <SimpleText text={"Frontend development with framework ReactJS"} />
         <SimpleText text={"Backend development with framework NodeJS"} />
