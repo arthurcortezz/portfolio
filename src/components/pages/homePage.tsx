@@ -21,7 +21,7 @@ export default function HomePage() {
             <SimpleText size={20} text={"Or something."} />
           </Flex>
         </Flex>
-        <Flex direction={"column"} w={"auto"} textAlign={"start"} m={"20px"}>
+        <Flex direction={"column"} w={"100%"} textAlign={"center"} m={"20px"}>
           <SimpleText text={"Programming languages used in this website:"} />
           <SimpleText text={"JavaScript, "} />
           <SimpleText text={"TypeScript,"} />
