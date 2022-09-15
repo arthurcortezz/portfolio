@@ -50,7 +50,7 @@ export default function Manager() {
     },
     {
       id: "leave_a_comment",
-      name: "Leave a Comment",
+      name: "Comment",
       render: <CommentPage />,
       active: true,
       mode: "link",
