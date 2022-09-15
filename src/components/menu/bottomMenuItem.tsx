@@ -1,10 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
-import { ILinkProps } from "../types";
+import { LinkProps } from "../types";
 
 interface Props {
-  onClickMenu?: (link: ILinkProps) => void;
-  value?: ILinkProps | null;
-  item: ILinkProps;
+  onClickMenu?: (link: LinkProps) => void;
+  value?: LinkProps | null;
+  item: LinkProps;
 }
 export default function BottomMenuItem({ item, value, onClickMenu }: Props) {
   const clickCheck = () => {

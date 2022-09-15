@@ -7,11 +7,10 @@ import {
   ProjectsPage,
   VideoPage,
 } from "../components";
-import { ILinkProps } from "../components/types";
+import { LinkProps } from "../components/types";
 
-interface Props {}
-export default function Manager({}: Props) {
-  let LinkItems: Array<ILinkProps> = [
+export default function Manager() {
+  let LinkItems: Array<LinkProps> = [
     {
       id: "home",
       name: "Home",
@@ -29,7 +28,7 @@ export default function Manager({}: Props) {
     {
       id: "projects",
       name: "Projects",
-      render: <ProjectsPage />,
+      render: <></>,
       active: true,
       mode: "link",
       subItems: [

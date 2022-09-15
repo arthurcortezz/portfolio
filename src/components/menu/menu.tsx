@@ -1,13 +1,13 @@
 import { Flex } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { ILinkProps } from "../types";
+import { LinkProps } from "../types";
 import { TopMenu, BottomMenu } from "../";
 
 interface Props {
-  linkItems: ILinkProps[];
+  linkItems: LinkProps[];
   children: ReactNode;
-  onClickMenu?: (link: ILinkProps) => void;
-  value?: ILinkProps | null;
+  onClickMenu?: (link: LinkProps) => void;
+  value?: LinkProps | null;
 }
 export default function MainMenu({ onClickMenu, value, linkItems, children }: Props) {
   return (

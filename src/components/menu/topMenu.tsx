@@ -26,7 +26,7 @@ export default function TopMenu() {
                 color={"white"}
                 fontWeight="bold"
                 href="https://www.instagram.com/arthurcortez19/">
-                LEAVE A COMMENT HERE!
+                FOLLOW ON INSTAGRAM!
               </Link>
             </Flex>
           ) : (
