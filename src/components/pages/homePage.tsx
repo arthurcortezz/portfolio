@@ -1,4 +1,4 @@
-import { Flex, Link, Image, Box } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
 import { SimpleText } from "../";
 
 export default function HomePage() {
@@ -8,22 +8,19 @@ export default function HomePage() {
         <SimpleText text={"Home Page"} size={26} />
       </Flex>
       <Flex direction={"column"} align={"center"} p={"30px"}>
-        <Flex w={"50%"} direction={"row"} align={"center"} justifyContent={"space-between"}>
-          <Flex>
-            <Image maxWidth={"250px"} alt="img" src="indice.jpg" />
-          </Flex>
-          <Flex>
-            <SimpleText size={22} text={"Arthur de Omena Cortez"} />
+        <Flex w={"50%"} direction={"column"} align={"center"} justifyContent={"space-between"}>
+          <Image maxWidth={"250px"} alt="img" src="indice.jpg" />
+
+          <Flex direction={"column"} textAlign={"center"}>
+            <SimpleText size={22} text={"Arthur Cortez"} />
+            <SimpleText size={18} text={"Web Developer"} />
           </Flex>
         </Flex>
-        <Flex direction={"column"} w={"initial"} textAlign={"center"} mt={"50px"}>
+        <Flex direction={"column"} w={"initial"} textAlign={"center"} mt={"20px"}>
           <SimpleText
             text={[
               "Programming languages used in this website:",
-              "JavaScript, ",
-              "TypeScript,",
-              "HTML,",
-              "CSS",
+              "JavaScript, TypeScript, HTML, CSS",
               "Data base: NoSQL MongoDB",
               "Frontend development with framework ReactJS",
               "Backend development with framework NodeJS",

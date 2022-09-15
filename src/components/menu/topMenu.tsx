@@ -4,6 +4,7 @@ export default function TopMenu() {
   const [isLargerThan] = useMediaQuery("(min-width: 960px)");
   return (
     <Flex
+      zIndex={4}
       w={"100%"}
       borderBottom={"1px solid #393939"}
       bg={"#202020"}

@@ -5,7 +5,7 @@ interface Props extends InputProps, InputProps {
   label: string;
   value: string;
 }
-export default function InputSelect({ name, value, label, onChange }: Props) {
+export default function Input({ name, value, label, onChange }: Props) {
   const handleOnChange = (e: any) => {
     onChange && onChange(e);
   };
@@ -13,7 +13,13 @@ export default function InputSelect({ name, value, label, onChange }: Props) {
     <Flex direction={"column"} w={"50%"}>
       <SimpleText text={name} />
       <InputGroup>
-        <ChakraInput bg="white" color="black" onChange={handleOnChange} placeholder={label} />
+        <ChakraInput
+          value={value}
+          bg="white"
+          color="black"
+          onChange={handleOnChange}
+          placeholder={label}
+        />
       </InputGroup>
     </Flex>
   );

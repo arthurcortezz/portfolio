@@ -11,6 +11,7 @@ export default function BottomMenu({ onClickMenu, value, linkItems, ...rest }: P
   return (
     <Flex
       transition="0.5s ease"
+      zIndex={4}
       h={"40px"}
       bg={"#202020"}
       w={"full"}

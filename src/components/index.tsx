@@ -22,4 +22,4 @@ export { default as SimpleText } from "./text/simpleText";
 
 export { default as Input } from "./input/input";
 
-export { default as ServiceMessage } from "../services/ServiceMessage";
+export { default as MessageToast } from "../services/MessageToast";
