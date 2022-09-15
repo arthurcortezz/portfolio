@@ -9,7 +9,6 @@ class CommentController extends Controller {
   async createComment(message: string) {
     try {
       this.api.put("/createComment", { message });
-      MessageToast.sucess("Comment sent successfully!");
     } catch (error: any) {
       throw "Catch";
     }

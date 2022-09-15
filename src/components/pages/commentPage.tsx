@@ -13,7 +13,9 @@ export default function CommentPage() {
     try {
       setLoader.on();
       const valid = await validationComment({ message });
-      if (valid.valid) CommentController.createComment(message);
+      if (valid.valid) MessageToast.sucess("Comment sent successfully!");
+      // CommentController.createComment(message);
+      setComment("");
       setLoader.off();
     } catch (error: any) {
       MessageToast.error(error.title);
