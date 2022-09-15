@@ -7,17 +7,10 @@ class CommentController extends Controller {
   }
 
   async createComment(message: string) {
-    let response = "";
     try {
-      if (message.length <= 0) MessageToast.error("Required field!");
-      else response = message + " COMMENT";
-      console.log(
-        "🚀 ~ file: commentController.ts ~ line 14 ~ CommentController ~ createComment ~ response",
-        response
-      );
-      return response;
+      MessageToast.sucess("Comment sent successfully!");
     } catch (error: any) {
-      throw error.message;
+      throw "Catch";
     }
   }
 }

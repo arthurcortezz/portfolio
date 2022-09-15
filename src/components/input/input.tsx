@@ -18,7 +18,7 @@ export default function Input({ name, value, label, onChange }: Props) {
     onChange && onChange(e);
   };
   return (
-    <Flex direction={"column"} w={isLargerThan ? "50%" : "100%"}>
+    <Flex direction={"column"} w={isLargerThan ? "50%" : "100%"} textAlign={"left"}>
       <SimpleText text={name} />
       <InputGroup>
         <ChakraInput
