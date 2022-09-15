@@ -1,4 +1,11 @@
-import { Flex, Input as ChakraInput, InputGroup, Text, InputProps } from "@chakra-ui/react";
+import {
+  Flex,
+  Input as ChakraInput,
+  InputGroup,
+  Text,
+  InputProps,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import SimpleText from "../text/simpleText";
 interface Props extends InputProps, InputProps {
   name: string;
@@ -6,11 +13,12 @@ interface Props extends InputProps, InputProps {
   value: string;
 }
 export default function Input({ name, value, label, onChange }: Props) {
+  const [isLargerThan] = useMediaQuery("(min-width: 960px)");
   const handleOnChange = (e: any) => {
     onChange && onChange(e);
   };
   return (
-    <Flex direction={"column"} w={"50%"}>
+    <Flex direction={"column"} w={isLargerThan ? "50%" : "100%"}>
       <SimpleText text={name} />
       <InputGroup>
         <ChakraInput
