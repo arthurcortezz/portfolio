@@ -19,3 +19,7 @@ export { default as BottomMenuItem } from "./menu/bottomMenuItem";
 export { default as Menu } from "./menu/menu";
 
 export { default as SimpleText } from "./text/simpleText";
+
+export { default as Input } from "./input/input";
+
+export { default as ServiceMessage } from "../services/ServiceMessage";

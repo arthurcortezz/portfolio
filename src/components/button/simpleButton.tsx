@@ -1,4 +1,5 @@
-import { Box, BoxProps, HStack, Text } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
+import SimpleText from "../text/simpleText";
 
 interface Props extends BoxProps {
   name: string;
@@ -9,18 +10,14 @@ export default function SimpleButton({ name, bg, onClick, ...res }: Props) {
   return (
     <Box
       as={"button"}
-      w={"400px"}
+      w={"200px"}
       border="gray solid 1px"
       borderRadius={5}
-      px={2}
-      py={0}
       bg={bg ?? "green.400"}
       color={"white"}
       onClick={onClick}
       {...res}>
-      <HStack w="100%" direction={"row"} alignItems={"center"}>
-        {name !== "" && <Text fontWeight="600">{name}</Text>}
-      </HStack>
+      {name !== "" && <SimpleText text={name}></SimpleText>}
     </Box>
   );
 }
