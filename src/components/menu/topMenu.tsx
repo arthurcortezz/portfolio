@@ -39,7 +39,7 @@ export default function TopMenu() {
               justify={"center"}
               align={"center"}>
               <Link href="https://www.instagram.com/arthurcortez19/" justifyContent={"center"}>
-                <Image maxWidth={"35px"} alt="img" src="menu.png" />
+                <Image maxWidth={"35px"} alt="img" src="instagram.png" />
               </Link>
             </Flex>
           )}
