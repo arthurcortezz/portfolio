@@ -1,4 +1,5 @@
 import yup from "./validator";
+import { Comment } from "../interfaces";
 
 const validateComment = {
   comment: yup.object().shape({
@@ -6,12 +7,12 @@ const validateComment = {
   }),
 };
 
-const validationComment = async function (comment: object) {
+const validationComment = async function (comment: any) {
   try {
     await validateComment.comment.validate(comment);
-    return { valid: true, title: "valid" };
+    return { valid: true, message: "valid", object: comment };
   } catch (error: any) {
-    throw { valid: false, title: `${error.params.label + " " + error.message}` };
+    throw { valid: false, message: `${error.params.label + " " + error.message}` };
   }
 };
 export default validationComment;

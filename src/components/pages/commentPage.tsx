@@ -7,18 +7,27 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function CommentPage() {
   const [loader, setLoader] = useBoolean(false);
-  const [comment, setComment] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [reason, setReason] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
-  const createComment = async (message: string) => {
+  const createComment = async (name: string, reason: string, message: string) => {
     try {
       setLoader.on();
-      const valid = await validationComment({ message });
-      if (valid.valid) MessageToast.sucess("Comment sent successfully!");
-      // CommentController.createComment(message);
-      setComment("");
+      const valid = await validationComment({ name, reason, message });
+      if (valid.valid) {
+        const result = await CommentController.createComment(valid.object);
+        console.log(
+          "🚀 ~ file: commentPage.tsx ~ line 20 ~ createComment ~ valid.object",
+          valid.object
+        );
+      }
+      setReason("");
+      setMessage("");
+      setName("");
       setLoader.off();
     } catch (error: any) {
-      MessageToast.error(error.title);
+      MessageToast.error(error.message);
       setLoader.off();
     }
   };
@@ -35,19 +44,31 @@ export default function CommentPage() {
           align={"center"}
           justifyContent={"space-between"}>
           <SimpleText text={"Leave a comment, a suggestion or even a criticism about this page!"} />
-          <Flex mt={"100px"} w={"100%"} justify={"center"}>
+          <Flex mt={"100px"} w={"100%"} align={"center"} justify={"center"} direction={"column"}>
+            <Input
+              name={"Your name: "}
+              label={"Write here you name"}
+              value={name}
+              onChange={(e: any) => setName(e.target.value)}
+            />
+            <Input
+              name={"Reason for comment: "}
+              label={"Write here you reason"}
+              value={reason}
+              onChange={(e: any) => setReason(e.target.value)}
+            />
             <Input
               name={"Message: "}
               label={"Write here you comment"}
-              value={comment}
-              onChange={(e: any) => setComment(e.target.value)}
+              value={message}
+              onChange={(e: any) => setMessage(e.target.value)}
             />
           </Flex>
           <Flex mt={"20px"}>
             <SimpleButton
               name={"Send"}
               onClick={() => {
-                createComment(comment);
+                createComment(name, reason, message);
               }}
             />
           </Flex>

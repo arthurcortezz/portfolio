@@ -1,11 +1,12 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, useMediaQuery } from "@chakra-ui/react";
 import { SimpleText } from "../";
 
 export default function HomePage() {
+  const [isLargerThan] = useMediaQuery("(min-width: 600px)");
   return (
     <Flex direction={"column"} align={"center"} p={"30px"}>
       <Flex
-        w={"50%"}
+        w={isLargerThan ? "50%" : "100%"}
         direction={"column"}
         align={"center"}
         justifyContent={"space-between"}
@@ -20,9 +21,9 @@ export default function HomePage() {
         </Flex>
       </Flex>
       <Flex direction={"column"} w={"initial"} textAlign={"center"} mt={"20px"}>
+        <SimpleText text={"Programming languages used in this website:"} size={22} />
         <SimpleText
           text={[
-            "Programming languages used in this website:",
             "JavaScript, TypeScript, HTML, CSS",
             "Data base: NoSQL MongoDB",
             "Frontend development with framework ReactJS",
