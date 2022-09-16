@@ -17,10 +17,6 @@ export default function CommentPage() {
       const valid = await validationComment({ name, reason, message });
       if (valid.valid) {
         const result = await CommentController.createComment(valid.object);
-        console.log(
-          "🚀 ~ file: commentPage.tsx ~ line 20 ~ createComment ~ valid.object",
-          valid.object
-        );
       }
       setReason("");
       setMessage("");
