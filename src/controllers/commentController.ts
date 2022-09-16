@@ -6,11 +6,10 @@ class CommentController extends Controller {
     super(route);
   }
 
-  async createComment(object: Comment): Promise<JSON> {
+  async createComment(object: string): Promise<JSON> {
     try {
       let response = await this.api.post("/", object);
       const result = await this.getReturn(response);
-      MessageToast.sucess("Comment sent successfully!");
       return result;
     } catch (error: any) {
       throw error.message;

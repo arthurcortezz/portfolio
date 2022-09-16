@@ -16,7 +16,7 @@ export default function CommentPage() {
       setLoader.on();
       const valid = await validationComment({ name, reason, message });
       if (valid.valid) {
-        const result = await CommentController.createComment(valid.object);
+        await CommentController.createComment(valid.object);
       }
       setReason("");
       setMessage("");

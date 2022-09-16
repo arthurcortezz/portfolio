@@ -3,6 +3,8 @@ import { Comment } from "../interfaces";
 
 const validateComment = {
   comment: yup.object().shape({
+    name: yup.string().required().label("Name"),
+    reason: yup.string().required().label("Reason"),
     message: yup.string().required().label("Message"),
   }),
 };
