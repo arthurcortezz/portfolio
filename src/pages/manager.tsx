@@ -1,7 +1,7 @@
 import {
   CommentPage,
   Container,
-  GitPage,
+  LoginPage,
   HomePage,
   PersonalInfoPage,
   ProjectsPage,
@@ -19,9 +19,9 @@ export default function Manager() {
       mode: "link",
     },
     {
-      id: "git",
-      name: "GitHub",
-      render: <GitPage />,
+      id: "login",
+      name: "Login",
+      render: <LoginPage />,
       active: true,
       mode: "link",
     },

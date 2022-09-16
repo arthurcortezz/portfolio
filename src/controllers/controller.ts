@@ -1,4 +1,3 @@
-import crypto from "crypto";
 import axios, { AxiosResponse } from "axios";
 import { Exception } from "../exceptions";
 
@@ -8,7 +7,7 @@ export class Controller {
   service: any;
   constructor(route: string) {
     this.api = axios.create({
-      baseURL: `${process.env.NEXT_STATIC_URI_API}/${route}`,
+      baseURL: `${process.env.NEXT_STATIC_URL_API}/${route}`,
     });
   }
 
