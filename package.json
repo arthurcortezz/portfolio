@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "deploy": "git add . && git commit -m deploy && git push",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
