@@ -9,8 +9,8 @@ class CommentController extends Controller {
   async createComment(object: string): Promise<JSON> {
     try {
       let response = await this.api.post("/", object);
-      const result = await this.getReturn(response);
-      return result;
+      // const result = await this.getReturn(response);
+      return response;
     } catch (error: any) {
       throw error.message;
     }
