@@ -5,6 +5,15 @@ import { CommentController } from "../../controllers";
 import { validationComment } from "../../validators";
 import "react-toastify/dist/ReactToastify.css";
 
+interface teste {
+  name: string;
+  reason: string;
+  message: string;
+}
+interface resposta {
+  data: teste;
+  status: number;
+}
 export default function CommentPage() {
   const [loader, setLoader] = useBoolean(false);
   const [name, setName] = useState<string>("");
@@ -17,7 +26,7 @@ export default function CommentPage() {
       const valid = await validationComment({ name, reason, message });
       if (valid.valid) {
         const response = await CommentController.createComment(valid.object);
-        console.log("🚀 ~ file: commentPage.tsx ~ line 20 ~ createComment ~ response", response);
+        MessageToast.sucess("Thanks for the comment " + response);
       }
       setReason("");
       setMessage("");
