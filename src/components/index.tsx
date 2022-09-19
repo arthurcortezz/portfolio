@@ -20,11 +20,12 @@ export { default as Menu } from "./menu/menu";
 
 export { default as ArrayText } from "./text/arrayText";
 export { default as SimpleText } from "./text/simpleText";
+export { default as PanelText } from "./text/panelText";
 
 export { default as Input } from "./input/input";
 
 export { default as SimplePanel } from "./panel/simplePanel";
 
-export { default as PanelImage } from "./images/panelImage";
+export { default as PanelImage } from "./panel/simplePanel";
 
 export { default as MessageToast } from "../services/MessageToast";

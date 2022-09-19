@@ -16,3 +16,7 @@ export interface LinkProps {
   active: boolean;
   subItems?: LinkProps[];
 }
+export interface MyProjects {
+  src: string;
+  text: string;
+}

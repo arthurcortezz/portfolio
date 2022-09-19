@@ -15,7 +15,9 @@ export default function ArrayText({ text, color, size, width }: Props) {
             <Text
               color={color ? color : "black"}
               fontSize={size ? size : 18}
-              w={width ? width : "100%"}>
+              w={width ? width : "100%"}
+              fontWeight={400}
+              fontFamily={"Lucida Sans Typewriter"}>
               {item}
             </Text>
           </Flex>
