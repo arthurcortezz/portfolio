@@ -1,5 +1,5 @@
 import { Flex, Image, useMediaQuery } from "@chakra-ui/react";
-import { SimpleText } from "../";
+import { SimpleText, ArrayText } from "../";
 
 export default function HomePage() {
   const [isLargerThan] = useMediaQuery("(min-width: 600px)");
@@ -22,7 +22,7 @@ export default function HomePage() {
       </Flex>
       <Flex direction={"column"} w={"initial"} textAlign={"center"} mt={"20px"}>
         <SimpleText text={"Programming languages used in this website:"} size={22} />
-        <SimpleText
+        <ArrayText
           text={[
             "JavaScript, TypeScript, HTML, CSS",
             "Data base: NoSQL MongoDB",
