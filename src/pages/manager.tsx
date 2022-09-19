@@ -28,18 +28,9 @@ export default function Manager() {
     {
       id: "projects",
       name: "Projects",
-      render: <></>,
+      render: <ProjectsPage />,
       active: true,
       mode: "link",
-      subItems: [
-        {
-          id: "video_player",
-          name: "Video Player",
-          render: <VideoPage />,
-          active: true,
-          mode: "link",
-        },
-      ],
     },
     {
       id: "about_me",

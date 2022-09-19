@@ -18,8 +18,13 @@ export { default as BottomMenu } from "./menu/bottomMenu";
 export { default as BottomMenuItem } from "./menu/bottomMenuItem";
 export { default as Menu } from "./menu/menu";
 
+export { default as ArrayText } from "./text/arrayText";
 export { default as SimpleText } from "./text/simpleText";
 
 export { default as Input } from "./input/input";
+
+export { default as SimplePanel } from "./panel/simplePanel";
+
+export { default as PanelImage } from "./images/panelImage";
 
 export { default as MessageToast } from "../services/MessageToast";
