@@ -28,4 +28,6 @@ export { default as SimplePanel } from "./panel/simplePanel";
 
 export { default as PanelImage } from "./panel/simplePanel";
 
+export { default as FlexMotion } from "./framer-motion/flexMotion";
+
 export { default as MessageToast } from "../services/MessageToast";

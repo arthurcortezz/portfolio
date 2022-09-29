@@ -18,7 +18,7 @@ export default function TopMenu() {
             <Flex
               minWidth={"171px"}
               h={"100%"}
-              border={"1px solid #393939"}
+              borderX={"1px solid #393939"}
               borderTop={"none"}
               justify={"center"}
               align={"center"}>
@@ -26,7 +26,8 @@ export default function TopMenu() {
                 fontSize={"12px"}
                 color={"white"}
                 fontWeight="bold"
-                href="https://www.instagram.com/arthurcortez19/">
+                href="https://www.instagram.com/arthurcortez19/"
+                isExternal>
                 FOLLOW ON INSTAGRAM!
               </Link>
             </Flex>
@@ -38,7 +39,10 @@ export default function TopMenu() {
               borderTop={"none"}
               justify={"center"}
               align={"center"}>
-              <Link href="https://www.instagram.com/arthurcortez19/" justifyContent={"center"}>
+              <Link
+                href="https://www.instagram.com/arthurcortez19/"
+                justifyContent={"center"}
+                isExternal>
                 <Image maxWidth={"35px"} alt="img" src="instagram.png" />
               </Link>
             </Flex>
@@ -50,11 +54,11 @@ export default function TopMenu() {
           </Link>
         </Flex>
         <Flex w="20%" justify={"end"}>
-          <Flex w={"100%"} border={"1px solid #393939"} borderTop={"none"}>
+          <Flex w={"100%"} borderX={"1px solid #393939"} borderTop={"none"}>
             <Flex m={"0px 10px"} justify={"center"} align={"center"} w={"100%"}>
               {isLargerThan ? (
                 <Flex direction={"column"} textAlign="center">
-                  <Link href="https://github.com/arthurcortezz">
+                  <Link href="https://github.com/arthurcortezz" isExternal>
                     <Text fontSize={"12px"} fontWeight={"bold"} fontFamily={"Roboto Bold"}>
                       ARTHUR CORTEZ
                     </Text>
@@ -62,7 +66,7 @@ export default function TopMenu() {
                   </Link>
                 </Flex>
               ) : (
-                <Link href="https://github.com/arthurcortezz">
+                <Link href="https://github.com/arthurcortezz" isExternal>
                   <Image maxWidth={"40px"} alt={"git"} src="git.png" />
                 </Link>
               )}

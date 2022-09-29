@@ -1,5 +1,5 @@
-import { Flex, Text, useMediaQuery } from "@chakra-ui/react";
-import { SimpleText, SimplePanel } from "../";
+import { Flex, useMediaQuery } from "@chakra-ui/react";
+import { SimpleText, SimplePanel, FlexMotion } from "../";
 import { MyProjects } from "../types";
 
 export default function ProjectsPage() {
@@ -16,22 +16,24 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <Flex>
-      <Flex textAlign={"center"} p={"20px"} w={"100%"} direction={"column"}>
-        <SimpleText text={"Projects Page"} size={22} />
-        <Flex display="inline-block">
-          {projects.map((item, key) => {
-            return (
-              <SimplePanel
-                width={isLargerThan ? "45%" : "100%"}
-                text={item.text}
-                key={key}
-                src={item.src}
-              />
-            );
-          })}
+    <FlexMotion>
+      <Flex>
+        <Flex textAlign={"center"} p={"20px"} w={"100%"} direction={"column"}>
+          <SimpleText text={"Projects Page"} size={22} />
+          <Flex display="inline-block">
+            {projects.map((item, key) => {
+              return (
+                <SimplePanel
+                  width={isLargerThan ? "45%" : "100%"}
+                  text={item.text}
+                  key={key}
+                  src={item.src}
+                />
+              );
+            })}
+          </Flex>
         </Flex>
       </Flex>
-    </Flex>
+    </FlexMotion>
   );
 }

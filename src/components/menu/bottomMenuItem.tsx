@@ -19,6 +19,7 @@ export default function BottomMenuItem({ item, value, onClickMenu }: Props) {
   const clicked = clickCheck();
   return (
     <Box
+      borderX={"1px solid #393939"}
       bg={clicked ? "#4d4d4d" : ""}
       as={"button"}
       onClick={() => onClickMenu && onClickMenu(item)}
