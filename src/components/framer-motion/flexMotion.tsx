@@ -9,15 +9,15 @@ export default function HomePage({ children }: Props) {
     shouldForwardProp: prop => isValidMotionProp(prop) || shouldForwardProp(prop),
   });
   const variaveis = {
-    antes: {
+    before: {
       opacity: 0,
     },
-    durante: {
+    after: {
       opacity: 1,
     },
   };
   return (
-    <FlexMotion transition="0.1s linear" variants={variaveis} initial="antes" animate="durante">
+    <FlexMotion transition="0.1s linear" variants={variaveis} initial="before" animate="after">
       {children}
     </FlexMotion>
   );
