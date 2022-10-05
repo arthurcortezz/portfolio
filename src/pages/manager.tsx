@@ -32,13 +32,13 @@ export default function Manager() {
       active: true,
       mode: "link",
     },
-    {
-      id: "about_me",
-      name: "About Me",
-      render: <PersonalInfoPage />,
-      active: true,
-      mode: "link",
-    },
+    // {
+    //   id: "about_me",
+    //   name: "About Me",
+    //   render: <PersonalInfoPage />,
+    //   active: true,
+    //   mode: "link",
+    // },
     {
       id: "login",
       name: "Login",

@@ -16,25 +16,23 @@ export default function LoginPage() {
   };
 
   return (
-    <FlexMotion>
-      <Flex textAlign={"center"} direction={"column"} align={"center"} p={"20px"}>
-        <SimpleText text={"Make login"} size={22} />
-        <Input
-          name={"Username"}
-          label={"Enter you username"}
-          value={user}
-          onChange={(e: any) => setUser(e.target.value)}
-        />
-        <Input
-          name={"Password"}
-          label={"Enter you password"}
-          value={pass}
-          onChange={(e: any) => setPass(e.target.value)}
-        />
-        <Flex mt={"30px"}>
-          <SimpleButton name={"Confirm"} onClick={() => handleClick()} />
-        </Flex>
+    <Flex textAlign={"center"} direction={"column"} align={"center"} p={"20px"}>
+      <SimpleText text={"Make login"} size={22} />
+      <Input
+        name={"Username"}
+        label={"Enter you username"}
+        value={user}
+        onChange={(e: any) => setUser(e.target.value)}
+      />
+      <Input
+        name={"Password"}
+        label={"Enter you password"}
+        value={pass}
+        onChange={(e: any) => setPass(e.target.value)}
+      />
+      <Flex mt={"30px"}>
+        <SimpleButton name={"Confirm"} onClick={() => handleClick()} />
       </Flex>
-    </FlexMotion>
+    </Flex>
   );
 }
