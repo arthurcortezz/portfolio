@@ -16,5 +16,18 @@ class CommentController extends Controller {
       throw error.message;
     }
   }
+
+  async notificacoesPush(subscription: any, token?: string | null) {
+    try {
+      console.log("🚀 Sucesso!!");
+      let response = await this.api.post("/saveSubscription", subscription, {
+        headers: { authorization: token },
+      });
+      const retorno = await this.getReturn(response);
+      return retorno.resposta;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 export default new CommentController("comment");
