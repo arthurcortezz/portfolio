@@ -43,5 +43,3 @@ export class Controller {
     throw new Exception("An error has occurred, please try again later.", response.status);
   }
 }
-
-export default Controller;
