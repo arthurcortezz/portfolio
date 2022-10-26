@@ -24,7 +24,6 @@ export default function Container({ linkItems }: Props) {
   };
   async function registerServiceWorker() {
     if ("serviceWorker" in navigator && (await Notification.requestPermission()) === "granted") {
-      MessageToast.sucess("SUCESSO");
       const registration = await navigator.serviceWorker.register("/serviceWorker.js");
       let subscription = await registration.pushManager.getSubscription();
       if (!subscription) {
@@ -33,6 +32,7 @@ export default function Container({ linkItems }: Props) {
           applicationServerKey: process.env.NEXT_STATIC_VAPID_PUBLIC_KEY,
         });
       }
+      MessageToast.sucess(subscription.endpoint);
     }
   }
   async function askPermission() {
