@@ -3,11 +3,9 @@ class NotificacaoController extends Controller {
   constructor(route: string) {
     super(route);
   }
-  async newSubscription(subscription: any, token?: string | null) {
+  async newSubscription(subscription: any) {
     try {
-      let response = await this.api.post("/saveSubscription", subscription, {
-        headers: { authorization: token },
-      });
+      let response = await this.api.post("/saveSubscription", subscription);
       const retorno = await this.getReturn(response);
       return retorno.resposta;
     } catch (error: any) {
@@ -15,11 +13,9 @@ class NotificacaoController extends Controller {
     }
   }
 
-  async notificacoesPush(token?: string | null) {
+  async notificacoesPush() {
     try {
-      let response = await this.api.post("/notificationPush", {
-        headers: { authorization: token },
-      });
+      let response = await this.api.post("/notificationPush");
       const retorno = await this.getReturn(response);
       return retorno.resposta;
     } catch (error) {
