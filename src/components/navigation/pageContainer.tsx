@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Spinner, useBoolean, useMediaQuery } from "@chakra-ui/react";
 import { LinkProps } from "../types";
-import { Menu } from "..";
+import { Menu, MessageToast } from "..";
 import { useEffect, useState } from "react";
 import { NotificationController } from "../../controllers";
 
@@ -23,7 +23,7 @@ export default function Container({ linkItems }: Props) {
     }
   };
   async function registerServiceWorker() {
-    if ("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator && (await Notification.requestPermission()) === "granted") {
       const registration = await navigator.serviceWorker.register("/serviceWorker.js");
       let subscription = await registration.pushManager.getSubscription();
       if (!subscription) {
@@ -32,7 +32,6 @@ export default function Container({ linkItems }: Props) {
           applicationServerKey: process.env.NEXT_STATIC_VAPID_PUBLIC_KEY,
         });
       }
-
       await NotificationController.newSubscription(subscription);
     }
   }
