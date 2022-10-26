@@ -5,7 +5,9 @@ class NotificacaoController extends Controller {
   }
   async newSubscription(subscription: any) {
     try {
-      let response = await this.api.post("/saveSubscription", subscription);
+      let response = await this.api.post("/saveSubscription", subscription, {
+        headers: { "Access-Control-Allow-Origin": true },
+      });
       const retorno = await this.getReturn(response);
       return retorno.resposta;
     } catch (error: any) {
@@ -15,7 +17,9 @@ class NotificacaoController extends Controller {
 
   async notificacoesPush() {
     try {
-      let response = await this.api.post("/notificationPush");
+      let response = await this.api.post("/notificationPush", {
+        headers: { "Access-Control-Allow-Origin": true },
+      });
       const retorno = await this.getReturn(response);
       return retorno.resposta;
     } catch (error) {
