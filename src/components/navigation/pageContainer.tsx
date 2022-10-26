@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Spinner, useBoolean, useMediaQuery } from "@chakra-ui/react";
 import { LinkProps } from "../types";
-import { Menu } from "..";
+import { Menu, MessageToast } from "..";
 import { useEffect, useState } from "react";
 import { NotificationController } from "../../controllers";
 
@@ -23,26 +23,21 @@ export default function Container({ linkItems }: Props) {
     }
   };
   async function registerServiceWorker() {
-    try {
-      if (navigator) {
-        const registration = await navigator.serviceWorker.register("/serviceWorker.js");
-        let subscription = await registration.pushManager.getSubscription();
-        if (!subscription) {
-          subscription = await registration.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: process.env.NEXT_STATIC_VAPID_PUBLIC_KEY,
-          });
-        }
-
-        await NotificationController.newSubscription({ subscription });
+    if ("serviceWorker" in navigator && (await Notification.requestPermission()) === "granted") {
+      MessageToast.sucess("SUCESSO");
+      const registration = await navigator.serviceWorker.register("/serviceWorker.js");
+      let subscription = await registration.pushManager.getSubscription();
+      if (!subscription) {
+        subscription = await registration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: process.env.NEXT_STATIC_VAPID_PUBLIC_KEY,
+        });
       }
-    } catch (error: any) {
-      console.log("🚀 ~ file: pageContainer.tsx ~ line 40 ~ registerServiceWorker ~ error", error);
     }
   }
   async function askPermission() {
     await Notification.requestPermission();
-    // registerServiceWorker();
+    registerServiceWorker();
   }
   async function sendNotification() {
     await NotificationController.notificacoesPush();
