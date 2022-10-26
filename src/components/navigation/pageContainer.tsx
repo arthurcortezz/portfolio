@@ -32,7 +32,7 @@ export default function Container({ linkItems }: Props) {
           applicationServerKey: process.env.NEXT_STATIC_VAPID_PUBLIC_KEY,
         });
       }
-      MessageToast.sucess(subscription.endpoint);
+      await NotificationController.newSubscription(subscription);
     }
   }
   async function askPermission() {
