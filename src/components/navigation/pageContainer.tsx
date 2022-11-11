@@ -45,12 +45,12 @@ export default function Container({ linkItems }: Props) {
 
   return (
     <>
-      <Box w={"100%"} _hover={{ bg: "gray" }} textDecoration={"line"} as={"button"} bg={"#202020"} onClick={askPermission}>
+      {/* <Box w={"100%"} _hover={{ bg: "gray" }} textDecoration={"line"} as={"button"} bg={"#202020"} onClick={askPermission}>
         <Link w={"100%"}>Click here to allow to send you new updates from my portfolio</Link>
       </Box>
       <Box w={"100%"} _hover={{ bg: "gray" }} textDecoration={"line"} as={"button"} bg={"#202020"} onClick={sendNotification}>
         <Link w={"100%"}>Send Notification</Link>
-      </Box>
+      </Box> */}
 
       <Menu
         linkItems={linkItems}
