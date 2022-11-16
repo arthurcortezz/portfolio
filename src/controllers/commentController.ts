@@ -17,7 +17,6 @@ class CommentController extends Controller {
 
   async notificacoesPush(subscription: any, token?: string | null) {
     try {
-      console.log("🚀 Sucesso!!");
       let response = await this.api.post("/saveSubscription", subscription, {
         headers: { authorization: token },
       });

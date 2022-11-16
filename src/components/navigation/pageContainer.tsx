@@ -44,35 +44,19 @@ export default function Container({ linkItems }: Props) {
   }
 
   return (
-    <>
-      {/* <Box w={"100%"} _hover={{ bg: "gray" }} textDecoration={"line"} as={"button"} bg={"#202020"} onClick={askPermission}>
-        <Link w={"100%"}>Click here to allow to send you new updates from my portfolio</Link>
-      </Box>
-      <Box w={"100%"} _hover={{ bg: "gray" }} textDecoration={"line"} as={"button"} bg={"#202020"} onClick={sendNotification}>
-        <Link w={"100%"}>Send Notification</Link>
-      </Box> */}
-
-      <Menu
-        linkItems={linkItems}
-        value={renderItem}
-        onClickMenu={(link: LinkProps) => {
-          if (link && link.render) render(link);
-        }}>
-        {loader ? (
-          <Spinner color="black" label="loading" />
-        ) : (
-          <>
-            {/* {renderItem && renderItem.subItems && (
-              <Flex w={"100%"} bg={"red"}>
-                Hello World
-              </Flex>
-            )} */}
-            <Flex minH={"100vh"} bg={"#e6e6e6"} w={isLargerThan ? "70%" : "100%"} direction={"column"}>
-              {renderItem?.render}
-            </Flex>
-          </>
-        )}
-      </Menu>
-    </>
+    <Menu
+      linkItems={linkItems}
+      value={renderItem}
+      onClickMenu={(link: LinkProps) => {
+        if (link && link.render) render(link);
+      }}>
+      {loader ? (
+        <Spinner color="black" label="loading" />
+      ) : (
+        <Flex minH={"100vh"} bg={"#e6e6e6"} w={isLargerThan ? "70%" : "100%"} direction={"column"}>
+          {renderItem?.render}
+        </Flex>
+      )}
+    </Menu>
   );
 }

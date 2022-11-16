@@ -6,11 +6,21 @@ class LoginController extends Controller {
     super(route);
   }
 
-  async makeLogin(object: any): Promise<JSON> {
+  async makeLogin(object: any) {
     try {
-      let response = await this.api.post("/", object);
+      let response = await this.api.post("/login", object);
       const result = await this.getReturn(response);
       MessageToast.sucess("Login make successfully!");
+      return result;
+    } catch (error: any) {
+      throw error.message;
+    }
+  }
+  async makeRegister(object: any) {
+    try {
+      let response = await this.api.post("/register", object);
+      const result = await this.getReturn(response);
+      MessageToast.sucess("Register make successfully!");
       return result;
     } catch (error: any) {
       throw error.message;
