@@ -1,12 +1,13 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Image, Link } from "@chakra-ui/react";
 import { PanelText } from "../";
 
 interface Props {
   text: string;
   src: string;
+  url: string;
   width?: string;
 }
-export default function PanelImage({ text, src, width }: Props) {
+export default function PanelImage({ text, src, url, width }: Props) {
   return (
     <>
       <Flex
@@ -18,13 +19,10 @@ export default function PanelImage({ text, src, width }: Props) {
         position={"relative"}
         align={"center"}
         cursor={"pointer"}>
-        <PanelText positionFlex={"relative"} text={text} />
-        <Image
-          src={src}
-          alt="img"
-          _hover={{ transform: "scale(1.1)" }}
-          transition={"transform .5s ease"}
-        />
+        <Link href={url} isExternal>
+          <PanelText positionFlex={"relative"} text={text} />
+          <Image src={src} alt="img" _hover={{ transform: "scale(1.1)" }} transition={"transform .5s ease"} />
+        </Link>
       </Flex>
     </>
   );

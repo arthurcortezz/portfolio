@@ -8,10 +8,12 @@ export default function ProjectsPage() {
     {
       src: "ac_systems.png",
       text: "AC Systems(Form Validator)",
+      url: "https://637cd85e5ad26228a5d92d79--ubiquitous-raindrop-f6306f.netlify.app",
     },
     {
       src: "black_jack.png",
       text: "Black Jack(Static Page)",
+      url: "",
     },
   ];
 
@@ -22,14 +24,7 @@ export default function ProjectsPage() {
           <SimpleText text={"Projects Page"} size={22} />
           <Flex display="inline-block">
             {projects.map((item, key) => {
-              return (
-                <SimplePanel
-                  width={isLargerThan ? "45%" : "100%"}
-                  text={item.text}
-                  key={key}
-                  src={item.src}
-                />
-              );
+              return <SimplePanel width={isLargerThan ? "45%" : "100%"} url={item.url} text={item.text} key={key} src={item.src} />;
             })}
           </Flex>
         </Flex>
