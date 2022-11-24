@@ -19,4 +19,5 @@ export interface LinkProps {
 export interface MyProjects {
   src: string;
   text: string;
+  url: string;
 }
