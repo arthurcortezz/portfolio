@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import axios, { AxiosResponse } from "axios";
 import { Exception } from "../exceptions";
 
@@ -9,6 +10,42 @@ export class Controller {
     this.api = axios.create({
       baseURL: `${process.env.NEXT_STATIC_URL_API}/${route}`,
     });
+  }
+
+  async criptografarBody(body: any, chavePublica: any) {
+    let vetorInicial = crypto.randomBytes(16);
+    let chave = crypto.randomBytes(32);
+
+    this.chavesCipher = {
+      iv: vetorInicial,
+      key: chave,
+    };
+
+    const objetoCriptografado = {
+      message: body,
+      chaves: {
+        iv: vetorInicial,
+        key: chave,
+      },
+    };
+    const cryptografed = this.service.criptografar(objetoCriptografado, chavePublica);
+    return {
+      body: {
+        message: cryptografed,
+      },
+      chaves: {
+        iv: vetorInicial,
+        key: chave,
+      },
+    };
+  }
+
+  descriptografarRetornoBody(response: AxiosResponse, chaves: any) {
+    const data = response.data;
+    if (data.message) {
+      const decrypted = this.service.descriptografar(data.message, chaves);
+      return decrypted;
+    } else throw new Exception("Mensagem não foi recebida.");
   }
 
   async getRequestBody(body: any) {
