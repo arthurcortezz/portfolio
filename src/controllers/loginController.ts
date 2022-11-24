@@ -27,4 +27,4 @@ class LoginController extends Controller {
     }
   }
 }
-export default new LoginController("login");
+export default new LoginController("account");
