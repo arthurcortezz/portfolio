@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { SimpleButton, SimpleText, Input, FlexMotion } from "../";
+import { SimpleButton, SimpleText, Input, FlexMotion, MessageToast } from "../";
 import { LoginController } from "../../controllers";
 import { useState } from "react";
 
@@ -14,13 +14,13 @@ export default function LoginPage() {
   const handleClickLogin = async () => {
     if (user && pass) {
       const result = await LoginController.makeLogin({ user: user, pass: pass });
-      console.log("🚀 ~ file: loginPage.tsx ~ line 17 ~ handleClickLogin ~ result", result);
+      if (result) MessageToast.sucess(result.message);
     }
   };
   const handleClickRegister = async () => {
     if (user && pass) {
-      console.log("🚀 ~ file: loginPage.tsx ~ line 22 ~ handleClickRegister ~ user", user);
       const result = await LoginController.makeRegister({ user: user, email: email, phone: phone, pass: pass, confirmPass: confirmPass });
+      if (result) MessageToast.sucess(result.message);
     }
   };
 

@@ -8,22 +8,18 @@ class LoginController extends Controller {
 
   async makeLogin(object: any) {
     try {
-      const bodyCriptografado = await this.criptografarBody(object, process.env.NEXT_STATIC_VAPID_PUBLIC_KEY);
       let response = await this.api.post("/login", object);
-      const retorno = await this.descriptografarRetornoBody(response, bodyCriptografado.chaves);
-      return retorno;
+      return response.data;
     } catch (error: any) {
-      throw error.message;
+      MessageToast.error(error.response.data.message);
     }
   }
   async makeRegister(object: any) {
     try {
       let response = await this.api.post("/register", object);
-      const result = await this.getReturn(response);
-      return result;
-      // MessageToast.sucess("Register make successfully!");
+      return response.data;
     } catch (error: any) {
-      throw error.message;
+      MessageToast.error(error.response.data.message);
     }
   }
 }

@@ -1,12 +1,4 @@
-import {
-  CommentPage,
-  Container,
-  LoginPage,
-  HomePage,
-  PersonalInfoPage,
-  ProjectsPage,
-  VideoPage,
-} from "../components";
+import { CommentPage, Container, LoginPage, HomePage, ProjectsPage } from "../components";
 import { LinkProps } from "../components/types";
 
 export default function Manager() {
@@ -32,13 +24,6 @@ export default function Manager() {
       active: true,
       mode: "link",
     },
-    // {
-    //   id: "about_me",
-    //   name: "About Me",
-    //   render: <PersonalInfoPage />,
-    //   active: true,
-    //   mode: "link",
-    // },
     {
       id: "login",
       name: "Login",
