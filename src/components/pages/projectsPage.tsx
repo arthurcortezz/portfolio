@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       url: "https://637cd85e5ad26228a5d92d79--ubiquitous-raindrop-f6306f.netlify.app",
     },
     {
-      src: "black_jack.png",
+      src: "black.jpg",
       text: "Black Jack(Static Page)",
       url: "",
     },
