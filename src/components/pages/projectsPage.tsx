@@ -13,7 +13,7 @@ export default function ProjectsPage() {
     {
       src: "black.jpg",
       text: "Black Jack(Static Page)",
-      url: "",
+      url: "https://black-jack-chi.vercel.app",
     },
   ];
 
