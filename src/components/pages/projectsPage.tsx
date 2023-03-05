@@ -6,14 +6,14 @@ export default function ProjectsPage() {
   const [isLargerThan] = useMediaQuery("(min-width: 960px)");
   let projects: Array<MyProjects> = [
     {
-      src: "ac_systems.png",
+      src: "formulario.png",
       text: "AC Systems(Form Validator)",
       url: "https://637cd85e5ad26228a5d92d79--ubiquitous-raindrop-f6306f.netlify.app",
     },
     {
-      src: "black.jpg",
+      src: "barbearia.png",
       text: "Black Jack(Static Page)",
-      url: "https://black-jack-chi.vercel.app",
+      url: "https://barbearia-acsystems.vercel.app",
     },
   ];
 

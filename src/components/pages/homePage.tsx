@@ -15,7 +15,7 @@ export default function HomePage() {
           borderRadius={"5px"}
           p={"5px"}
           bg={"#e3e3e3"}>
-          <Image maxWidth={"250px"} alt="img" src="indice.jpg" />
+          <Image maxWidth={"250px"} alt="img" src="indice.png" />
           <Flex direction={"column"} textAlign={"center"}>
             <SimpleText size={22} text={"Arthur Cortez"} />
             <SimpleText size={18} text={"Web Developer"} />
